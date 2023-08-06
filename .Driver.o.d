@@ -1,4 +1,5 @@
-Driver.o: /home/virtual/Desktop/usb_driver/USB_Driver_Controller/Driver.c \
+Driver.o: \
+ /home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/Driver.c \
  include/linux/compiler-version.h include/linux/kconfig.h \
  include/generated/autoconf.h include/linux/compiler_types.h \
  include/linux/compiler_attributes.h include/linux/compiler-gcc.h \

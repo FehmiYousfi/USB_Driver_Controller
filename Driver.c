@@ -8,16 +8,18 @@
 #define USB_VENDOR_ID 0x1209
 #define USB_PRODUCT_ID 0x5741
 
-static int usb_drv_probe(struct usb_interface *interface, const struct usb_deviceid *id)
+struct usb_class_driver usb_cd;
+
+static int usb_drv_probe(struct usb_interface *interface, const struct usb_device_id *id)
 {
 	struct usb_host_interface *interface_desc;
 	struct usb_end_descriptor * endpoint;
 	int ret;
 
 	interface_desc = interface->cur_altersetting;
-	printk(KERN_INFO "USBinfo %d now probed: (%04X: %04)\n", intface_desc->desc.bIntfaceNumber, id->idVendor, id->idProduct);
-	printk(KERN_INFO "ID->bNumberEndpoints : %02X\n",intface_desc->desc.bNumEndpoints);
-	printk(KERN_INFO "ID-> bIntrefaceClass: %02X\n", intface_desc.desc.bInterfaceClass);
+	printk(KERN_INFO "USBinfo %d now probed: (%04X: %04)\n", interface_desc->desc.bInterfaceNumber, id->idVendor, id->idProduct);
+	printk(KERN_INFO "ID->bNumberEndpoints : %02X\n",interface_desc->desc.bNumEndpoints);
+	printk(KERN_INFO "ID-> bIntrefaceClass: %02X\n", interface_desc.desc.bInterfaceClass);
 	ret = usb_register_dev(interface,&usb_cd);
 	if(ret)
 	{
@@ -36,8 +38,9 @@ static struct usb_device_disconnect(struct usb_interface *interface)
 }
 
 static struct usd_device_id usb_drv_table[] = {
-{	
-	USB_DEVICE(USB_VENDOR_ID,USB_PRODUCT_ID)},{}
+
+	{USB_DEVICE(USB_VENDOR_ID,USB_PRODUCT_ID)}
+
 };
 
 MODULE_DEVICE_TABLE(usb,usb_drv_table);
