@@ -1,0 +1,13 @@
+solution for problem 1 on 06_08_2023 : modules error in default Makefile for modules
+--> for adding the kernel modules :
+	apt-get install linux-headers-...
+	cd /lib/modules/$(uname -r)/build
+	make modules_prepare
+--> for updating modules and files for whole kernel : 
+	apt-get install linux-source-...
+	cd /lib/modules/$(uname -r)/build
+	make menuconfig
+	make bindeb-pkg
+--> in Makefile the path must be declared "M=$(shell pwd)"
+
+

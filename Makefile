@@ -1,9 +1,8 @@
 obj-m := Driver.o
 KDIR := /lib/modules/$(shell uname -r)/build
-PWD := $(shell pwd)
 default :
-	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
+	$(MAKE) -C $(KDIR) M=$(shell pwd) modules
 install :
-	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) module_install
+	$(MAKE) -C $(KDIR) M=$(shell pwd) module_install
 clean :
-	$(MAKE) -C $(KDIR) SUBDIRS=$(PWD) clean
+	$(MAKE) -C $(KDIR) M=$(shell pwd) clean

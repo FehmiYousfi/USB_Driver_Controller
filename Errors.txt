@@ -1,0 +1,4 @@
+make -C /lib/modules/5.19.0-50-generic/build M=/home/virtual/Desktop/usb_driver/USB_Driver_Controller modules
+make[1]: Entering directory '/usr/src/linux-headers-5.19.0-50-generic'
+  CC [M]  /home/virtual/Desktop/usb_driver/USB_Driver_Controller/Driver.o
+make[1]: Leaving directory '/usr/src/linux-headers-5.19.0-50-generic'
