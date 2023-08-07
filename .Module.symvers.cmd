@@ -1,0 +1,1 @@
+cmd_/home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/Module.symvers := sed 's/ko$$/o/' /home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/modules.order | scripts/mod/modpost -m -a  -o /home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/Module.symvers -e -i Module.symvers   -T -

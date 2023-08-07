@@ -1,0 +1,1 @@
+cmd_/home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/driver.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/driver.ko /home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/driver.o /home/virtual/Desktop/Custom_Driver/USB_Driver_Controller/driver.mod.o;  true
